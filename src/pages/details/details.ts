@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {AngularFire, FirebaseListObservable} from 'angularfire2';
 
 /*
   Generated class for the Details page.
@@ -12,11 +13,13 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'details.html'
 })
 export class DetailsPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+tasks: FirebaseListObservable<any>;
+  constructor(public navCtrl: NavController, public navParams: NavParams, af: AngularFire) {
+    this.tasks = af.database.list('/tasks');
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage');
   }
-
+  //methods
 }
