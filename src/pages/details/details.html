@@ -22,9 +22,9 @@
 
 <div padding>
   <button ion-button color="primary">Update</button>
-    <button ion-button color="danger">Delete</button>
+    <button ion-button color="danger"(click)="deleteTask(name)">Delete</button>
 
-  <button ion-button color="dark">Cancel</button>
+  <button ion-button color="dark"(click)="cancelEdit()">Cancel</button>
 </div>
 
 

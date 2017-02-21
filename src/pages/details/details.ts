@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
+import { HomePage } from '../home/home';
 
 /*
   Generated class for the Details page.
@@ -18,8 +19,14 @@ tasks: FirebaseListObservable<any>;
     this.tasks = af.database.list('/tasks');
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DetailsPage');
-  }
-  //methods
+  
+ //methods
+ deleteTask(name: string)
+ {
+    this.tasks.remove(name);
+    this.navCtrl.push(HomePage);
+ }
+ cancelEdit(){
+   this.navCtrl.push(HomePage);
+ }
 }
