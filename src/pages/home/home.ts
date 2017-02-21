@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavController, AlertController } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
+
 //reference details page
 import {DetailsPage} from '../details/details';
 
@@ -11,15 +12,17 @@ import {DetailsPage} from '../details/details';
 })
 export class HomePage {
 
-tasks: FirebaseListObservable<any>;
+tasks: FirebaseListObservable<any>;// reference to the database
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, af: AngularFire) {
 
-this.tasks = af.database.list('/tasks');
+this.tasks = af.database.list('/tasks'); // get tasks from firebase
   }
   //methods
+
+  //this method takes user to the details view and also passes the task object
   detailsView(task){
-    this.navCtrl.push(DetailsPage,task);
+    this.navCtrl.push(DetailsPage,task);// passes the current task to the details page
   }
 
 }
