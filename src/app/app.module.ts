@@ -5,6 +5,17 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import {AngularFireModule} from 'angularfire2';
+
+// AF2 Settings
+export const firebaseConfig = {
+  apiKey: "AIzaSyD1x9uaWqejNNcZzWgtpt6FX0vFJ9OUAOE",
+    authDomain: "ionicproject-b3ff0.firebaseapp.com",
+    databaseURL: "https://ionicproject-b3ff0.firebaseio.com",
+    storageBucket: "ionicproject-b3ff0.appspot.com",
+    messagingSenderId: "210069377296"
+};
+
 
 @NgModule({
   declarations: [
@@ -15,7 +26,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     TabsPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
