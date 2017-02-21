@@ -19,18 +19,23 @@ task;
   constructor(public navCtrl: NavController, public navParams: NavParams, af: AngularFire) {
     this.tasks = af.database.list('/tasks');
     this.task= navParams.data;
-    console.log(this.task);
+    //console.log(this.task);
   }
 
   
  //methods
  deleteTask(task)
  {
-   console.log(task);
+   //console.log(task);
     this.tasks.remove(task);
     this.navCtrl.push(HomePage);
  }
  cancelEdit(){
    this.navCtrl.push(HomePage);
+ }
+ updateTask(task){
+
+  this.tasks.update(this.task.$key,this.task);
+  this.navCtrl.push(HomePage);
  }
 }
