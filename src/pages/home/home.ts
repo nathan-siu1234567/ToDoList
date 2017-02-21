@@ -18,8 +18,8 @@ tasks: FirebaseListObservable<any>;
 this.tasks = af.database.list('/tasks');
   }
   //methods
-  detailsView(){
-    this.navCtrl.push(DetailsPage);
+  detailsView(task){
+    this.navCtrl.push(DetailsPage,task);
   }
 
 }

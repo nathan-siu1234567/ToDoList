@@ -15,15 +15,19 @@ import { HomePage } from '../home/home';
 })
 export class DetailsPage {
 tasks: FirebaseListObservable<any>;
+task;
   constructor(public navCtrl: NavController, public navParams: NavParams, af: AngularFire) {
     this.tasks = af.database.list('/tasks');
+    this.task= navParams.data;
+    console.log(this.task);
   }
 
   
  //methods
- deleteTask(name: string)
+ deleteTask(task)
  {
-    this.tasks.remove(name);
+   console.log(task);
+    this.tasks.remove(task);
     this.navCtrl.push(HomePage);
  }
  cancelEdit(){
