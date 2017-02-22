@@ -25,12 +25,13 @@ this.tasks = af.database.list('/tasks'); // get tasks from firebase
   detailsView(task){
     this.navCtrl.push(DetailsPage,task);// passes the current task to the details page
   }
+  //method to update task
   taskCompleted(task){
-    this.tasks.update(task.$key,{complete:task.complete});
+    this.tasks.update(task.$key,{complete:task.complete});//updates task to complete in the db
   }
 
   addNewTask(){
-    this.navCtrl.push(AddPage);
+    this.navCtrl.push(AddPage);// redirect to add page
   }
 
 }

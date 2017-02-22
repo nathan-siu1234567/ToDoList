@@ -20,16 +20,17 @@ tasks: FirebaseListObservable<any>;
 public task:any;
   constructor(public navCtrl: NavController, public navParams: NavParams, af: AngularFire) {
     this.tasks = af.database.list('/tasks');
-    this.task={};
+    this.task={};// task object
   }
 
  //methods
 
+//add a new task to the db
  addNewTask()
  {
-   console.log(this.task);
-   this.task.complete = false;
-   this.tasks.push(this.task);
+   //console.log(this.task);
+   this.task.complete = false;//set the new task to false
+   this.tasks.push(this.task);//push the task to db
    this.navCtrl.push(HomePage); // redirects to home page
  }
 
