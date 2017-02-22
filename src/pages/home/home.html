@@ -11,7 +11,7 @@
       <ion-item>
         <ion-row>
           <ion-col>
-            <h1>
+            <h1 class="{{task.complete?'complete':''}}">
             {{task.name}}
             </h1>
             <br>
@@ -20,7 +20,7 @@
         </ion-row>
       </ion-item>
       <ion-item-options side="right">
-      <ion-checkbox color="dark" checked="true"></ion-checkbox>
+      <ion-checkbox [(ngModel)]="task.complete" (ionChange)="taskCompleted(task)"></ion-checkbox>
        <button ion-button color="primary" (click)="detailsView(task)">
         <ion-icon name="build" ></ion-icon>
         Edit</button>
