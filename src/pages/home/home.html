@@ -5,7 +5,11 @@
 </ion-header>
 
 <ion-content padding>
-  
+  <button ion-button (click)="addNewTask()">
+    <ion-icon name="add" ></ion-icon>
+    Add New Task
+  </button>
+
 <ion-list inset>
     <ion-item-sliding *ngFor="let task of tasks | async">
       <ion-item>
@@ -21,6 +25,7 @@
       </ion-item>
       <ion-item-options side="right">
       <ion-checkbox [(ngModel)]="task.complete" (ionChange)="taskCompleted(task)"></ion-checkbox>
+      
        <button ion-button color="primary" (click)="detailsView(task)">
         <ion-icon name="build" ></ion-icon>
         Edit</button>

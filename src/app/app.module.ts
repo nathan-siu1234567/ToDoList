@@ -6,6 +6,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import {DetailsPage} from '../pages/details/details';
+import {AddPage} from '../pages/add/add';
 import {AngularFireModule} from 'angularfire2';
 
 // AF2 Settings
@@ -25,7 +26,8 @@ export const firebaseConfig = {
     ContactPage,
     HomePage,
     TabsPage,
-    DetailsPage
+    DetailsPage,
+    AddPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -38,7 +40,8 @@ export const firebaseConfig = {
     ContactPage,
     HomePage,
     TabsPage,
-    DetailsPage
+    DetailsPage,
+    AddPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

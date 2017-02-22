@@ -5,6 +5,7 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
 
 //reference details page
 import {DetailsPage} from '../details/details';
+import {AddPage} from '../add/add';
 
 @Component({
   selector: 'page-home',
@@ -26,6 +27,10 @@ this.tasks = af.database.list('/tasks'); // get tasks from firebase
   }
   taskCompleted(task){
     this.tasks.update(task.$key,{complete:task.complete});
+  }
+
+  addNewTask(){
+    this.navCtrl.push(AddPage);
   }
 
 }
